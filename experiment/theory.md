@@ -24,7 +24,9 @@ $$|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$$
 Where:
 
 - α and β are complex numbers
-- $|\alpha|^2 + |\beta|^2 = 1$ to satisfy normalization
+- Normalization condition:
+
+$$|\alpha|^2 + |\beta|^2 = 1$$
 
 In matrix form:
 
@@ -56,8 +58,13 @@ Quantum measurement collapses the qubit to one of the basis states.
 If we measure in the computational basis:
 
 - The outcome will be either $|0\rangle$ or $|1\rangle$
-- Probability of measuring $|0\rangle$ = $|\alpha|^2$
-- Probability of measuring $|1\rangle$ = $|\beta|^2$
+- Probability of measuring $|0\rangle$:
+
+$$P(0) = |\alpha|^2$$
+
+- Probability of measuring $|1\rangle$:
+
+$$P(1) = |\beta|^2$$
 
 In quantum mechanics, measurements are represented using **observable operators**, which are matrices acting on quantum states.
 
@@ -92,7 +99,12 @@ Where:
 
 **Physical Interpretation:**
 
-- If the system is in an eigenstate $|\psi\rangle$ of observable $A$, measuring $A$ will always yield the eigenvalue $\lambda$ with **100% certainty** (deterministic result).
+- If the system is in an eigenstate
+
+$$|\psi\rangle$$
+
+of observable $A$, measuring $A$ will always yield the eigenvalue $\lambda$ with **100% certainty** (deterministic result).
+
 - If the system is in a **superposition** (not an eigenstate), the measurement outcome is probabilistic. The result will be one of the eigenvalues, with probability determined by the overlap of the state with each eigenstate.
 - For a general state, the expected measurement outcome is the **expectation value** of the observable, which is a weighted average of all eigenvalues based on the state composition.
 
@@ -143,7 +155,11 @@ $$\frac{1}{\sqrt{2}}(|0\rangle - i|1\rangle)$$ → eigenvalue −1
 
 #### 6. Expectation Value
 
-The expectation value of an observable $A$ for a quantum state $|\psi\rangle$ is the **statistical average** of measurement outcomes obtained from many repeated measurements on identically prepared quantum systems.
+The expectation value of an observable $A$ for a quantum state:
+
+$$|\psi\rangle$$
+
+is the **statistical average** of measurement outcomes obtained from many repeated measurements on identically prepared quantum systems.
 
 $$\langle A \rangle = \langle\psi|A|\psi\rangle$$
 
@@ -156,7 +172,8 @@ Where:
 
 - $\lambda_i$ are the eigenvalues of observable $A$
 - $P_i$ is the probability of measuring eigenvalue $\lambda_i$
-- The probabilities $P_i$ depend on how much the quantum state overlaps with each eigenstate
+- The probabilities $P_i$ are determined by the overlap: $P_i = |\langle \psi_i | \psi \rangle|^2$, where $|\psi_i\rangle$ is the eigenstate corresponding to eigenvalue $\lambda_i$
+- The sum of all probabilities equals 1: $\sum_i P_i = 1$
 
 **Key Points:**
 
@@ -193,9 +210,11 @@ The expectation value is fundamentally a measure of how much the quantum state a
 **For the Pauli-Z operator:**
 The expectation value $\langle Z \rangle$ describes the balance between the probabilities of measuring the two eigenvalues (+1 and −1):
 
-- $\langle Z \rangle = +1$ → The state is eigenstate $|0\rangle$ (100% probability of outcome +1)
-- $\langle Z \rangle = -1$ → The state is eigenstate $|1\rangle$ (100% probability of outcome −1)
-- $\langle Z \rangle = 0$ → Equal superposition (50% chance of +1, 50% chance of −1)
+When $\langle Z \rangle = +1$: The state is eigenstate $|0\rangle$ (100% probability of outcome +1)
+
+When $\langle Z \rangle = -1$: The state is eigenstate $|1\rangle$ (100% probability of outcome −1)
+
+When $\langle Z \rangle = 0$: Equal superposition (50% chance of +1, 50% chance of −1)
 
 **Geometric Interpretation (Bloch Sphere):**
 On the Bloch sphere, the expectation value equals the **z-component of the qubit state's position**. This is because:
