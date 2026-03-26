@@ -63,21 +63,38 @@ In quantum mechanics, measurements are represented using **observable operators*
 
 #### 5. Observable Operators (Measurement Basis)
 
-Observables represent measurable quantities in a quantum system. They are represented mathematically using **Hermitian matrices**, which have real eigenvalues and orthogonal eigenvectors.
+In quantum mechanics, every measurable physical quantity (like position, momentum, or spin) is represented by an **observable**—a mathematical operator that acts on quantum states.
+
+Observables represent measurable quantities in a quantum system. They are represented mathematically using **Hermitian matrices**, which have the special property that:
+
+- All eigenvalues are **real numbers** (required since measurement outcomes must be physically real)
+- Eigenvectors form a **complete orthonormal basis** (allowing any quantum state to be expressed as a superposition of eigenstates)
+
+##### Why Hermitian Matrices?
+
+Observable operators must be **Hermitian** (self-adjoint) for two fundamental reasons:
+
+1. **Real Eigenvalues**: Physical measurement outcomes are always real numbers. Hermitian matrices guarantee that their eigenvalues are real, ensuring that quantum measurements always produce real, physical results.
+
+2. **Orthogonal Eigenvectors**: A Hermitian matrix has a complete set of orthogonal eigenvectors. This orthogonal basis is essential because it allows any quantum state to be decomposed into eigenstates, making the eigenvalue structure central to understanding measurement outcomes.
 
 ##### Eigenvalues and Eigenstates
 
-When an observable A acts on a quantum state, the measurement outcome corresponds to one of its eigenvalues.
+When an observable $A$ acts on a quantum state, the measurement outcome corresponds to one of its eigenvalues:
 
 $$A|\psi\rangle = \lambda|\psi\rangle$$
 
 Where:
 
-- $A$ is the observable operator
-- $|\psi\rangle$ is the eigenstate
-- $\lambda$ is the eigenvalue (measurement result)
+- $A$ is the observable operator (a Hermitian matrix)
+- $|\psi\rangle$ is the eigenstate of $A$
+- $\lambda$ is the eigenvalue (the measurement outcome)
 
-If the state is already an eigenstate of the observable, the measurement result is deterministic. Otherwise, the outcome is probabilistic.
+**Physical Interpretation:**
+
+- If the system is in an eigenstate $|\psi\rangle$ of observable $A$, measuring $A$ will always yield the eigenvalue $\lambda$ with **100% certainty** (deterministic result).
+- If the system is in a **superposition** (not an eigenstate), the measurement outcome is probabilistic. The result will be one of the eigenvalues, with probability determined by the overlap of the state with each eigenstate.
+- For a general state, the expected measurement outcome is the **expectation value** of the observable, which is a weighted average of all eigenvalues based on the state composition.
 
 ##### Pauli-Z Operator
 
@@ -104,10 +121,8 @@ $$X = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$$
 
 Eigenstates:
 
-$$|+\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)$$ → eigenvalue +1  
+$$|+\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)$$ → eigenvalue +1
 $$|-\rangle = \frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)$$ → eigenvalue −1
-
-This operator measures the qubit along the **X-axis** of the Bloch sphere.
 
 ##### Pauli-Y Operator
 
@@ -119,22 +134,35 @@ $$Y = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix}$$
 
 Eigenstates:
 
-$$\frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle)$$ → eigenvalue +1  
+$$\frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle)$$ → eigenvalue +1
 $$\frac{1}{\sqrt{2}}(|0\rangle - i|1\rangle)$$ → eigenvalue −1
-
-| Operator | Matrix                                  | Measurement Axis |
 | -------- | --------------------------------------- | ---------------- |
-| Pauli-Z  | $\begin{bmatrix}1&0\\0&-1\end{bmatrix}$ | Z-axis           |
-| Pauli-X  | $\begin{bmatrix}0&1\\1&0\end{bmatrix}$  | X-axis           |
-| Pauli-Y  | $\begin{bmatrix}0&-i\\i&0\end{bmatrix}$ | Y-axis           |
+| Pauli-Z | $\begin{bmatrix}1&0\\0&-1\end{bmatrix}$ | Z-axis |
+| Pauli-X | $\begin{bmatrix}0&1\\1&0\end{bmatrix}$ | X-axis |
+| Pauli-Y | $\begin{bmatrix}0&-i\\i&0\end{bmatrix}$ | Y-axis |
 
 #### 6. Expectation Value
 
-The expectation value of an observable A for a quantum state $|\psi\rangle$ is the average result obtained from many repeated measurements.
+The expectation value of an observable $A$ for a quantum state $|\psi\rangle$ is the **statistical average** of measurement outcomes obtained from many repeated measurements on identically prepared quantum systems.
 
 $$\langle A \rangle = \langle\psi|A|\psi\rangle$$
 
-For Pauli operators acting on a single qubit, the expectation value lies between **−1 and +1**.
+**Connection to Eigenvalues:**
+The expectation value can be understood as a weighted average of the observable's eigenvalues:
+
+$$\langle A \rangle = \sum_i P_i \lambda_i$$
+
+Where:
+
+- $\lambda_i$ are the eigenvalues of observable $A$
+- $P_i$ is the probability of measuring eigenvalue $\lambda_i$
+- The probabilities $P_i$ depend on how much the quantum state overlaps with each eigenstate
+
+**Key Points:**
+
+- For **eigenstates**: If $|\psi\rangle$ is an eigenstate of $A$ with eigenvalue $\lambda$, then $\langle A \rangle = \lambda$ (deterministic result)
+- For **superpositions**: $\langle A \rangle$ lies between the smallest and largest eigenvalues of $A$
+- For Pauli operators (with eigenvalues ±1), the expectation value always satisfies: $-1 \leq \langle A \rangle \leq +1$
 
 #### 7. Example Calculation
 
@@ -160,10 +188,21 @@ $$\langle Z \rangle = 0$$
 
 #### 8. Interpretation of Expectation Value
 
-The expectation value describes the balance between the probabilities of $|0\rangle$ and $|1\rangle$.
+The expectation value is fundamentally a measure of how much the quantum state aligns with the eigenstates of the observable being measured.
 
-- $\langle Z \rangle = 1$ → qubit is fully in $|0\rangle$
-- $\langle Z \rangle = -1$ → qubit is fully in $|1\rangle$
-- $\langle Z \rangle = 0$ → equal superposition of $|0\rangle$ and $|1\rangle$
+**For the Pauli-Z operator:**
+The expectation value $\langle Z \rangle$ describes the balance between the probabilities of measuring the two eigenvalues (+1 and −1):
 
-On the Bloch sphere, this value corresponds to the **projection of the qubit state along the measurement axis**.
+- $\langle Z \rangle = +1$ → The state is eigenstate $|0\rangle$ (100% probability of outcome +1)
+- $\langle Z \rangle = -1$ → The state is eigenstate $|1\rangle$ (100% probability of outcome −1)
+- $\langle Z \rangle = 0$ → Equal superposition (50% chance of +1, 50% chance of −1)
+
+**Geometric Interpretation (Bloch Sphere):**
+On the Bloch sphere, the expectation value equals the **z-component of the qubit state's position**. This is because:
+
+- The Bloch sphere's surface represents all possible quantum states
+- Each measurement axis (X, Y, or Z) defines a direction in 3D space
+- The expectation value of a Pauli operator equals the projection of the state onto that measurement axis
+- This projection directly gives the weighted average of the eigenvalue outcomes
+
+This geometric picture provides intuition: a state pointing "up" (toward +Z) will have $\langle Z \rangle \approx +1$, while a state pointing "down" (toward -Z) will have $\langle Z \rangle \approx -1$.
