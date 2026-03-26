@@ -1,3 +1,7 @@
-- [Pure State Tomography with Pauli Measurements](https://arxiv.org/abs/1601.05379)
+1. Michael A. Nielsen and Isaac L. Chuang, *Quantum Computation and Quantum Information*, 10th Anniversary Edition, Cambridge University Press, 2010.
 
-- [Towards Two Bloch Sphere Representation of Pure Two-Qubit States and Unitaries](https://pmc.ncbi.nlm.nih.gov/articles/PMC11049020/)
+2. David J. Griffiths and Darrell F. Schroeter, *Introduction to Quantum Mechanics*, 3rd Edition, Cambridge University Press, 2018.
+
+3. J. J. Sakurai and Jim Napolitano, *Modern Quantum Mechanics*, 2nd Edition, Cambridge University Press, 2017.
+
+4. N. David Mermin, *Quantum Computer Science: An Introduction*, Cambridge University Press, 2007.
