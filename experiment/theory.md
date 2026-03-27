@@ -1,5 +1,16 @@
+<style>
+  .katex-display {
+    text-align: left !important;
+  }
+  mjx-container[display="true"] {
+    text-align: left !important;
+  }
+</style>
 <script>
   MathJax = {
+    chtml: {
+      displayAlign: 'left'
+    },
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']]
     }
