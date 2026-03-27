@@ -158,14 +158,22 @@ $$Y = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix}$$
 
 Eigenstates:
 
-$$\frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle) \text{ with eigenvalue } +1$$
+$$
+\frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle)
+\quad \text{with eigenvalue } +1
+$$
 
-| $$\frac{1}{\sqrt{2}}( | 0\rangle - i                              | 1\rangle) \text{ with eigenvalue } -1$$ |
-| --------------------- | ----------------------------------------- | --------------------------------------- |
-| Pauli-Z               | $$\begin{bmatrix}1&0\\0&-1\end{bmatrix}$$ | Z-axis                                  |
-| Pauli-X               | $$\begin{bmatrix}0&1\\1&0\end{bmatrix}$$  | X-axis                                  |
-| Pauli-Y               | $$\begin{bmatrix}0&-i\\i&0\end{bmatrix}$$ | Y-axis                                  |
+$$
+\frac{1}{\sqrt{2}}(|0\rangle - i|1\rangle)
+\quad \text{with eigenvalue } -1
+$$
 
+
+| Operator | Matrix | Axis |
+|----------|--------|------|
+| Pauli-Z | $$\begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix}$$ | Z-axis |
+| Pauli-X | $$\begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix}$$ | X-axis |
+| Pauli-Y | $$\begin{bmatrix}0 & -i \\ i & 0\end{bmatrix}$$ | Y-axis |
 #### 6. Expectation Value
 
 The expectation value of an observable expressed as:
