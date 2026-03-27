@@ -1,3 +1,10 @@
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -15,7 +22,7 @@ This experiment focuses on the basic concept of measuring a qubit and understand
 
 #### 2. What is a Qubit?
 
-A qubit is the fundamental unit of quantum information. It is a two-level quantum system that can be in state |0⟩, |1⟩, or any linear combination of the two.
+A qubit is the fundamental unit of quantum information. It is a two-level quantum system that can be in state $|0\rangle$, $|1\rangle$, or any linear combination of the two.
 
 Mathematically, a qubit can be written as:
 
@@ -23,10 +30,8 @@ $$|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$$
 
 Where:
 
-- α and β are complex numbers
-- Normalization condition:
-
-$$|\alpha|^2 + |\beta|^2 = 1$$
+- $\alpha$ and $\beta$ are complex numbers
+- Normalization condition: $|\alpha|^2 + |\beta|^2 = 1$
 
 In matrix form:
 
@@ -46,9 +51,8 @@ $$|\psi\rangle = \cos(\theta/2)|0\rangle + e^{i\phi} \sin(\theta/2)|1\rangle$$
 
 Where:
 
-$$\theta \text{ represents the angle from the Z-axis}$$
-
-$$\phi \text{ represents the angle in the X--Y plane}$$
+- $\theta$ represents the angle from the Z-axis
+- $\phi$ represents the angle in the X--Y plane
 
 This representation helps visualize quantum states as points on a three-dimensional sphere.
 
@@ -56,11 +60,7 @@ This representation helps visualize quantum states as points on a three-dimensio
 
 Quantum measurement collapses the qubit to one of the basis states.
 
-If we measure in the computational basis:
-
-The outcome will be either:
-
-$$|0\rangle \text{ or } |1\rangle$$
+If we measure in the computational basis, the outcome will be either $|0\rangle$ or $|1\rangle$.
 
 Probability of measuring the state $|0\rangle$:
 
@@ -97,23 +97,13 @@ $$A|\psi\rangle = \lambda|\psi\rangle$$
 
 Where:
 
-$$A \text{ is the observable operator (a Hermitian matrix)}$$
-
-$$|\psi\rangle \text{ is the eigenstate of } A$$
-
-$$\lambda \text{ is the eigenvalue (the measurement outcome)}$$
+- $A$ is the observable operator (a Hermitian matrix)
+- $|\psi\rangle$ is the eigenstate of $A$
+- $\lambda$ is the eigenvalue (the measurement outcome)
 
 **Physical Interpretation:**
 
-If the system is in an eigenstate:
-
-$$|\psi\rangle$$
-
-of the observable, then measuring it will always yield the eigenvalue:
-
-$$\lambda$$
-
-with **100% certainty** (deterministic result).
+If the system is in an eigenstate $|\psi\rangle$ of the observable, then measuring it will always yield the eigenvalue $\lambda$ with **100% certainty** (deterministic result).
 
 - If the system is in a **superposition** (not an eigenstate), the measurement outcome is probabilistic. The result will be one of the eigenvalues, with probability determined by the overlap of the state with each eigenstate.
 - For a general state, the expected measurement outcome is the **expectation value** of the observable, which is a weighted average of all eigenvalues based on the state composition.
@@ -128,9 +118,8 @@ $$Z = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}$$
 
 Measurement outcomes:
 
-$$|0\rangle \text{ gives outcome } +1$$
-
-$$|1\rangle \text{ gives outcome } -1$$
+- $|0\rangle$ gives outcome $+1$
+- $|1\rangle$ gives outcome $-1$
 
 For a superposition state, the measurement produces an expectation value between −1 and +1.
 
@@ -144,9 +133,8 @@ $$X = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$$
 
 Eigenstates:
 
-$$|+\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle) \text{ with eigenvalue } +1$$
-
-$$|-\rangle = \frac{1}{\sqrt{2}}(|0\rangle - |1\rangle) \text{ with eigenvalue } -1$$
+- $|+\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)$ with eigenvalue $+1$
+- $|-\rangle = \frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)$ with eigenvalue $-1$
 
 ##### Pauli-Y Operator
 
@@ -158,25 +146,18 @@ $$Y = \begin{bmatrix} 0 & -i \\ i & 0 \end{bmatrix}$$
 
 Eigenstates:
 
-$$\frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle) \text{ with eigenvalue } +1$$
+- $\frac{1}{\sqrt{2}}(|0\rangle + i|1\rangle)$ with eigenvalue $+1$
+- $\frac{1}{\sqrt{2}}(|0\rangle - i|1\rangle)$ with eigenvalue $-1$
 
-| $$\frac{1}{\sqrt{2}}( | 0\rangle - i                              | 1\rangle) \text{ with eigenvalue } -1$$ |
-| --------------------- | ----------------------------------------- | --------------------------------------- |
-| Pauli-Z               | $$\begin{bmatrix}1&0\\0&-1\end{bmatrix}$$ | Z-axis                                  |
-| Pauli-X               | $$\begin{bmatrix}0&1\\1&0\end{bmatrix}$$  | X-axis                                  |
-| Pauli-Y               | $$\begin{bmatrix}0&-i\\i&0\end{bmatrix}$$ | Y-axis                                  |
+| Operator | Matrix | Axis |
+|----------|--------|------|
+| Pauli-Z | $$\begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix}$$ | Z-axis |
+| Pauli-X | $$\begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix}$$ | X-axis |
+| Pauli-Y | $$\begin{bmatrix}0 & -i \\ i & 0\end{bmatrix}$$ | Y-axis |
 
 #### 6. Expectation Value
 
-The expectation value of an observable expressed as:
-
-$$A$$
-
-for a quantum state:
-
-$$|\psi\rangle$$
-
-is the **statistical average** of measurement outcomes obtained from many repeated measurements on identically prepared quantum systems.
+The expectation value of an observable expressed as $A$ for a quantum state $|\psi\rangle$ is the **statistical average** of measurement outcomes obtained from many repeated measurements on identically prepared quantum systems.
 
 $$\langle A \rangle = \langle\psi|A|\psi\rangle$$
 
@@ -187,18 +168,16 @@ $$\langle A \rangle = \sum_i P_i \lambda_i$$
 
 Where:
 
-- $$\lambda_i \text{ are the eigenvalues of observable } A$$
-- $$P_i \text{ is the probability of measuring eigenvalue } \lambda_i$$
-- $$P_i = |\langle \psi_i | \psi \rangle|^2 \text{ where } |\psi_i\rangle \text{ is the eigenstate corresponding to } \lambda_i$$
-- $$\sum_i P_i = 1 \text{ (sum of all probabilities equals 1)}$$
+- $\lambda_i$ are the eigenvalues of observable $A$
+- $P_i$ is the probability of measuring eigenvalue $\lambda_i$
+- $P_i = |\langle \psi_i | \psi \rangle|^2$ where $|\psi_i\rangle$ is the eigenstate corresponding to $\lambda_i$
+- $\sum_i P_i = 1$ (sum of all probabilities equals 1)
 
 **Key Points:**
 
-$$\text{For eigenstates: If } |\psi\rangle \text{ is an eigenstate of } A \text{ with eigenvalue } \lambda \text{ then } \langle A \rangle = \lambda$$
-
-$$\text{For superpositions: } \langle A \rangle \text{ lies between smallest and largest eigenvalues of } A$$
-
-$$\text{For Pauli operators: } -1 \leq \langle A \rangle \leq +1$$
+- **For eigenstates:** If $|\psi\rangle$ is an eigenstate of $A$ with eigenvalue $\lambda$ then $\langle A \rangle = \lambda$
+- **For superpositions:** $\langle A \rangle$ lies between smallest and largest eigenvalues of $A$
+- **For Pauli operators:** $-1 \leq \langle A \rangle \leq +1$
 
 #### 7. Example Calculation
 
@@ -226,35 +205,13 @@ $$\langle Z \rangle = 0$$
 
 The expectation value is fundamentally a measure of how much the quantum state aligns with the eigenstates of the observable being measured.
 
-**For the Pauli-Z operator:**
+**For the Pauli-Z operator:** $\langle Z \rangle$ describes the balance between probabilities of measuring $(+1)$ and $(-1)$.
 
-$$\langle Z \rangle \text{ describes the balance between probabilities of measuring } (+1) \text{ and } (-1)$$
+When the expectation value equals +1 ($\langle Z \rangle = +1$), the state is eigenstate $|0\rangle$ with 100% probability of outcome $+1$.
 
-When the expectation value equals +1:
+When the expectation value equals -1 ($\langle Z \rangle = -1$), the state is eigenstate $|1\rangle$ with 100% probability of outcome $-1$.
 
-$$\langle Z \rangle = +1$$
-
-The state is eigenstate:
-
-$$|0\rangle$$
-
-with 100% probability of outcome +1
-
-When the expectation value equals -1:
-
-$$\langle Z \rangle = -1$$
-
-The state is eigenstate:
-
-$$|1\rangle$$
-
-with 100% probability of outcome −1
-
-When the expectation value equals 0:
-
-$$\langle Z \rangle = 0$$
-
-Equal superposition (50% chance of +1, 50% chance of −1)
+When the expectation value equals 0 ($\langle Z \rangle = 0$), it is an equal superposition (50% chance of $+1$, 50% chance of $-1$).
 
 **Geometric Interpretation (Bloch Sphere):**
 On the Bloch sphere, the expectation value equals the **z-component of the qubit state's position**. This is because:
@@ -266,6 +223,5 @@ On the Bloch sphere, the expectation value equals the **z-component of the qubit
 
 This geometric picture provides intuition:
 
-$$\text{A state pointing "up" (toward } +Z\text{) has } \langle Z \rangle = +1$$
-
-$$\text{A state pointing "down" (toward } -Z\text{) has } \langle Z \rangle = -1$$
+- A state pointing "up" (toward $+Z$) has $\langle Z \rangle = +1$
+- A state pointing "down" (toward $-Z$) has $\langle Z \rangle = -1$
