@@ -19,7 +19,7 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-##### 1. What is Quantum Computing?
+#### 1. What is Quantum Computing?
 
 Quantum computing is a computational paradigm that utilizes the principles of quantum mechanics to process information. Unlike classical computers, which represent information using binary bits (0 or 1), quantum computers use **quantum bits (qubits)** that can exist in superpositions of states.
 
