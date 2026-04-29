@@ -19,17 +19,14 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-#### 1. What is Quantum Computing?
+##### 1. What is Quantum Computing?
 
-Quantum computing is a field of computing that uses principles of quantum mechanics to perform calculations. Unlike classical computers, which use bits as the smallest unit of information (0 or 1), quantum computers use **qubits**, which can exist in a combination (superposition) of both 0 and 1.
+Quantum computing is a computational paradigm that utilizes the principles of quantum mechanics to process information. Unlike classical computers, which represent information using binary bits (0 or 1), quantum computers use **quantum bits (qubits)** that can exist in superpositions of states.
 
-Quantum computing is powerful because:
+A qubit is described as a linear combination of basis states |0⟩ and |1⟩, allowing it to encode more information than a classical bit. Furthermore, multiple qubits can exhibit **entanglement**, a uniquely quantum phenomenon where the state of one qubit is correlated with another, enabling complex information processing.
 
-- Qubits can exist in superpositions
-- Multiple qubits can be **entangled**, sharing information instantly
-- It enables new algorithms that are faster than classical ones for certain problems (for example, Shor’s algorithm and Grover’s algorithm)
+Quantum systems evolve according to unitary transformations and are governed by probabilistic measurement outcomes. These properties enable quantum computers to solve certain classes of problems more efficiently than classical computers.
 
-This experiment focuses on the basic concept of measuring a qubit and understanding what the outcome means through the **expectation value**.
 
 #### 2. What is a Qubit?
 
